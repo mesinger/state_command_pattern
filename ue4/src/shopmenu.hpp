@@ -11,15 +11,21 @@ class Menu {
 
 private:
 
-	std::unique_ptr<MenuItem> buyMenu;
 	std::vector<std::string> games;
+
+	User* const user;
 
 public:
 
-	Menu();
+	Menu(User* user);
 	virtual ~Menu() = default;
 
-	void buyGame(User* user, std::string gamename);
+	void buyGame(std::string gamename);
+	void installGame(Game* pgame);
+	void updateGame(Game* pgame);
+	void startGame(Game* pgame);
+	void stopGame(Game* pgame);
+	void uninstallGame(Game* pgame);
 };
 
 class MenuItem {

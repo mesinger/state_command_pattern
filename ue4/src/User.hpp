@@ -19,4 +19,5 @@ public:
 	virtual ~User() = default;
 
 	void addGame(std::string gamename);
+	Game* getGame(std::string gamename);
 };
