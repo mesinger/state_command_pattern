@@ -1,4 +1,4 @@
-#include "gamestate.h"
+#include "gamestate.hpp"
 #include <iostream>
 
 void BoughtGameState::buy(Game* const pgame)

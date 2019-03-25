@@ -1,23 +1,15 @@
-#include "Game.h"
+#include "shopmenu.hpp"
 #include <iostream>
 #include <string>
+#include <string>
+#include <memory>
 
 int main(int argc, char** argv) {
 
-	Game game("apex legends");
+	Menu shop;
+	User mesi(1);
 
-	game.start();
-	game.install();
-	game.uninstall();
-
-	game.buy();
-	game.uninstall();
-	game.install();
-	game.stop();
-	game.start();
-	game.update();
-	game.stop();
-	game.uninstall();
+	shop.buyGame(&mesi, "apex legends");
 
 	return EXIT_SUCCESS;
 }

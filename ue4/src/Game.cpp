@@ -1,10 +1,10 @@
-#include "Game.h"
-#include "gamestate.h"
+#include "Game.hpp"
+#include "gamestate.hpp"
 
 Game::Game(const std::string & name)
 	:name(name)
 {
-	state = std::make_unique<NotBoughtGameState>();
+	state = std::make_shared<NotBoughtGameState>();
 }
 
 Game::~Game()

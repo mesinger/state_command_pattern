@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Game.h"
+#include "Game.hpp"
 #include <iostream>
 
 class IGameState {
 
 public:
-	virtual ~IGameState() {
-	}
+	virtual ~IGameState() = default;
+
 	virtual void buy(Game* const pgame) = 0;
 	virtual void install(Game* const pgame) = 0;
 	virtual void start(Game* const pgame) = 0;
@@ -19,8 +19,7 @@ public:
 class BoughtGameState : public IGameState {
 
 public:
-	virtual ~BoughtGameState() {
-	}
+	virtual ~BoughtGameState() = default;
 
 	virtual void buy(Game* const pgame) override;
 	virtual void install(Game* const pgame) override;
@@ -33,8 +32,7 @@ public:
 class InstalledGameState : public IGameState {
 
 public:
-	virtual ~InstalledGameState() {
-	}
+	virtual ~InstalledGameState() = default;
 
 	virtual void buy(Game* const pgame) override;
 	virtual void install(Game* const pgame) override;
@@ -47,8 +45,7 @@ public:
 class NotBoughtGameState : public IGameState {
 
 public:
-	virtual ~NotBoughtGameState() {
-	}
+	virtual ~NotBoughtGameState() = default;
 
 	virtual void buy(Game* const pgame) override;
 	virtual void install(Game* const pgame) override;
@@ -61,8 +58,7 @@ public:
 class RunningGameState : public IGameState {
 
 public:
-	virtual ~RunningGameState() {
-	}
+	virtual ~RunningGameState() = default;
 
 	virtual void buy(Game* const pgame) override;
 	virtual void install(Game* const pgame) override;

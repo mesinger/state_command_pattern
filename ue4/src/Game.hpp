@@ -13,12 +13,12 @@ class Game {
 
 public:
 
-	const std::string name;
-
-public:
-
-	Game(const std::string& name);
+	explicit Game(const std::string& name);
 	virtual ~Game();
+
+	Game(const Game& rhs) :name(rhs.name), state(rhs.state) {
+
+	}
 
 	void buy();
 	void install();
@@ -27,9 +27,11 @@ public:
 	void update();
 	void uninstall();
 
+	const std::string name;
+
 private:
 
-	std::unique_ptr<IGameState> state;
+	std::shared_ptr<IGameState> state;
 
 	friend class NotBoughtGameState;
 	friend class BoughtGameState;
