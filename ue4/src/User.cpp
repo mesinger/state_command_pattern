@@ -1,6 +1,6 @@
 #include "User.hpp"
 
-void User::addGame(std::string gamename)
+void User::addGame(const std::string& gamename)
 {
 	Game game(gamename);
 	game.buy();
@@ -8,9 +8,7 @@ void User::addGame(std::string gamename)
 	ownedGames.emplace(gamename, game);
 }
 
-Game * User::getGame(std::string gamename)
+Game * User::getGame(const std::string& gamename)
 {
-	//Game& ref = ownedGames.at(gamename);
-	//Game* res = &ref;
 	return &ownedGames.at(gamename);
 }

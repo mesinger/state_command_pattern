@@ -18,6 +18,6 @@ public:
 	explicit User(uint64_t id) :id(id) {};
 	virtual ~User() = default;
 
-	void addGame(std::string gamename);
-	Game* getGame(std::string gamename);
+	void addGame(const std::string& gamename);
+	Game* getGame(const std::string& gamename);
 };

@@ -13,14 +13,12 @@ private:
 
 	std::vector<std::string> games;
 
-	User* const user;
-
 public:
 
-	Menu(User* user);
+	Menu();
 	virtual ~Menu() = default;
 
-	void buyGame(std::string gamename);
+	void buyGame(User* user, const std::string& gamename);
 	void installGame(Game* pgame);
 	void updateGame(Game* pgame);
 	void startGame(Game* pgame);

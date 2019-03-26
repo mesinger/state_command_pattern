@@ -1,13 +1,12 @@
 #include "shopmenu.hpp"
 
-Menu::Menu(User* user)
-	:user(user)
+Menu::Menu()
 {
 	games.emplace_back("apex legends");
 	games.emplace_back("rainbow six");
 }
 
-void Menu::buyGame(std::string gamename)
+void Menu::buyGame(User* user, const std::string& gamename)
 {
 	MenuItem buyMenu(std::make_shared<BuyCommand>(user, gamename));
 	buyMenu.clicked();
