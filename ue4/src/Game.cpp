@@ -40,3 +40,13 @@ void Game::uninstall()
 {
 	state->uninstall(this);
 }
+
+void Game::borrow()
+{
+	state->borrow(this);
+}
+
+void Game::returnGame()
+{
+	state->returnGame(this);
+}

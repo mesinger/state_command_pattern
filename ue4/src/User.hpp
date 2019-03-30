@@ -11,7 +11,7 @@ public:
 	
 private:
 
-	std::map<std::string, Game> ownedGames;
+	std::map<std::string, std::unique_ptr<Game>> library;
 
 public:
 
@@ -19,5 +19,6 @@ public:
 	virtual ~User() = default;
 
 	void addGame(const std::string& gamename);
-	Game* getGame(const std::string& gamename);
+	void removeGame(const std::string& gamename);
+	Game* getGame(const std::string& gamename) const;
 };

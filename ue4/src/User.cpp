@@ -2,13 +2,18 @@
 
 void User::addGame(const std::string& gamename)
 {
-	Game game(gamename);
-	game.buy();
+	std::unique_ptr<Game> game = std::make_unique<Game>(gamename);
+	game->buy();
 
-	ownedGames.emplace(gamename, game);
+	library.emplace(gamename, std::move(game));
 }
 
-Game * User::getGame(const std::string& gamename)
+void User::removeGame(const std::string & gamename)
 {
-	return &ownedGames.at(gamename);
+	library.erase(gamename);
+}
+
+Game * User::getGame(const std::string& gamename) const
+{
+	return library.at(gamename).get();
 }

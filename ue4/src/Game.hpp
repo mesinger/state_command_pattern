@@ -8,6 +8,7 @@ class NotBoughtGameState;
 class BoughtGameState;
 class InstalledGameState;
 class RunningGameState;
+class BorrowedGameState;
 
 class Game {
 
@@ -26,6 +27,8 @@ public:
 	void stop();
 	void update();
 	void uninstall();
+	void borrow();
+	void returnGame();
 
 	const std::string name;
 
@@ -37,4 +40,5 @@ private:
 	friend class BoughtGameState;
 	friend class InstalledGameState;
 	friend class RunningGameState;
+	friend class BorrowedGameState;
 };

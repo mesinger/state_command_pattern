@@ -7,15 +7,11 @@
 int main(int argc, char** argv) {
 
 	User mesi(1);
-	Menu shop(&mesi);
+	Menu shop;
 
-	shop.buyGame("apex");
-	shop.startGame(mesi.getGame("apex"));
+	shop.buyGame(&mesi, "apex");
 	shop.installGame(mesi.getGame("apex"));
 	shop.startGame(mesi.getGame("apex"));
-	shop.updateGame(mesi.getGame("apex"));
-	shop.stopGame(mesi.getGame("apex"));
-	shop.updateGame(mesi.getGame("apex"));
 	shop.stopGame(mesi.getGame("apex"));
 	shop.uninstallGame(mesi.getGame("apex"));
 
