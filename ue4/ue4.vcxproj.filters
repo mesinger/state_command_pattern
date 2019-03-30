@@ -30,7 +30,7 @@
     <ClInclude Include="src\shopmenu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\composite.h">
+    <ClInclude Include="src\composite.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

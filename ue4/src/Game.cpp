@@ -7,10 +7,6 @@ Game::Game(const std::string & name)
 	state = std::make_shared<NotBoughtGameState>();
 }
 
-Game::~Game()
-{
-}
-
 void Game::buy()
 {
 	state->buy(this);

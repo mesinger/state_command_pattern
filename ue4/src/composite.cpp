@@ -1,4 +1,4 @@
-#include "composite.h"
+#include "composite.hpp"
 
 void CommandComposite::exec()
 {

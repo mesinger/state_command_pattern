@@ -15,11 +15,9 @@ class Game {
 public:
 
 	explicit Game(const std::string& name);
-	virtual ~Game();
+	virtual ~Game() = default;
 
-	Game(const Game& rhs) :name(rhs.name), state(rhs.state) {
-
-	}
+	Game(const Game& rhs) :name(rhs.name), state(rhs.state) {}
 
 	void buy();
 	void install();

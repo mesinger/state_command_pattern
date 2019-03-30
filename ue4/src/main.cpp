@@ -7,6 +7,7 @@
 int main(int argc, char** argv) {
 
 	User mesi(1);
+	User ben(2);
 	Menu shop;
 
 	//shop.buyGame(&mesi, "apex");
@@ -16,7 +17,15 @@ int main(int argc, char** argv) {
 	//shop.uninstallGame(mesi.getGame("apex"));
 
 	shop.buyGame(&mesi, "apex");
-	shop.oneclickplay(mesi.getGame("apex"));
+	shop.installGame(mesi.getGame("apex"));
+	shop.borrow(&mesi, &ben, mesi.getGame("apex"));
+
+	shop.startGame(mesi.getGame("apex"));
+	shop.installGame(ben.getGame("apex"));
+	shop.startGame(ben.getGame("apex"));
+
+	shop.returnGameByOwner(&mesi, &ben, mesi.getGame("apex"));
+	shop.startGame(mesi.getGame("apex"));
 
 	return EXIT_SUCCESS;
 }

@@ -12,6 +12,7 @@ class Menu {
 private:
 
 	std::vector<std::string> games;
+	std::vector<std::string> borrowedGamesLog;
 
 public:
 
@@ -25,6 +26,13 @@ public:
 	void stopGame(Game* pgame);
 	void uninstallGame(Game* pgame);
 	void oneclickplay(Game* pgame);
+	void borrow(User* owner, User* receiver, Game* game);
+	void returnGameByOwner(User* owner, User* receiver, Game* game);
+	void returnGameByReceiver(User* owner, User* receiver, Game* game);
+	void removeGame(User* user, const std::string& gamename) const;
+
+	void addBorrowedGameToDataBase(User* owner, User* receiver, const std::string& gamename);
+	void removeBorrowedGameFromDataBase(User* owner, User* receiver, const std::string& gamename);
 };
 
 class MenuItem {
