@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\commands.hpp" />
+    <ClInclude Include="src\composite.h" />
     <ClInclude Include="src\Game.hpp" />
     <ClInclude Include="src\gamestate.hpp" />
     <ClInclude Include="src\shopmenu.hpp" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\commands.cpp" />
+    <ClCompile Include="src\composite.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\gamestate.cpp" />
     <ClCompile Include="src\main.cpp" />

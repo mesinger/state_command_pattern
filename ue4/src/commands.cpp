@@ -29,3 +29,10 @@ void StopCommand::exec()
 {
 	game->stop();
 }
+
+OneClickPlayCommand::OneClickPlayCommand(Game * game)
+	:game(game)
+{
+	add(std::make_unique<InstallCommand>(game));
+	add(std::make_unique<StartCommand>(game));
+}

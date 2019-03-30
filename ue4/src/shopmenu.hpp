@@ -24,17 +24,18 @@ public:
 	void startGame(Game* pgame);
 	void stopGame(Game* pgame);
 	void uninstallGame(Game* pgame);
+	void oneclickplay(Game* pgame);
 };
 
 class MenuItem {
 
 private:
 
-	std::shared_ptr<ICommand> command;
+	std::shared_ptr<CommandComponent> command;
 
 public:
 ;
-	explicit MenuItem(std::shared_ptr<ICommand> command) :command(command){}
+	explicit MenuItem(std::shared_ptr<CommandComponent> command) :command(command){}
 	virtual ~MenuItem() = default;
 
 	inline void clicked() {

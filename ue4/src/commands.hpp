@@ -2,15 +2,9 @@
 
 #include "User.hpp"
 #include "Game.hpp"
+#include "composite.h"
 
-class ICommand {
-
-public:
-
-	virtual void exec() = 0;
-};
-
-class BuyCommand : public ICommand{
+class BuyCommand : public CommandComposite{
 
 private:
 
@@ -25,7 +19,7 @@ public:
 	virtual void exec() override;
 };
 
-class InstallCommand : public ICommand {
+class InstallCommand : public CommandComposite {
 
 private:
 
@@ -39,7 +33,7 @@ public:
 	virtual void exec() override;
 };
 
-class StartCommand : public ICommand {
+class StartCommand : public CommandComposite {
 
 private:
 
@@ -53,7 +47,7 @@ public:
 	virtual void exec() override;
 };
 
-class StopCommand : public ICommand {
+class StopCommand : public CommandComposite {
 
 private:
 
@@ -67,7 +61,7 @@ public:
 	virtual void exec() override;
 };
 
-class UpdateCommand : public ICommand {
+class UpdateCommand : public CommandComposite {
 
 private:
 
@@ -81,7 +75,7 @@ public:
 	virtual void exec() override;
 };
 
-class UninstallCommand : public ICommand {
+class UninstallCommand : public CommandComposite {
 
 private:
 
@@ -93,4 +87,16 @@ public:
 	virtual ~UninstallCommand() = default;
 
 	virtual void exec() override;
+};
+
+class OneClickPlayCommand : public CommandComposite {
+
+private:
+
+	Game* const game;
+
+public:
+
+	OneClickPlayCommand(Game* game);
+	virtual ~OneClickPlayCommand() = default;
 };

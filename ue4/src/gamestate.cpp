@@ -134,13 +134,9 @@ void RunningGameState::returnGame(Game * const pgame) {}
 
 void BorrowedGameState::buy(Game * const pgame) {}
 
-void BorrowedGameState::install(Game * const pgame) {}
-
 void BorrowedGameState::start(Game * const pgame) {}
 
 void BorrowedGameState::stop(Game * const pgame) {}
-
-void BorrowedGameState::update(Game * const pgame) {}
 
 void BorrowedGameState::borrow(Game * const pgame) {}
 

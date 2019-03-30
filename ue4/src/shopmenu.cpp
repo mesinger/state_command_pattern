@@ -41,3 +41,9 @@ void Menu::uninstallGame(Game * pgame)
 	MenuItem uninstallMenu(std::make_shared<UninstallCommand>(pgame));
 	uninstallMenu.clicked();
 }
+
+void Menu::oneclickplay(Game * pgame)
+{
+	OneClickPlayCommand cmd(pgame);
+	cmd.exec();
+}
